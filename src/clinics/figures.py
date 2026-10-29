@@ -372,7 +372,7 @@ def fig_sequence(seq, issuers, out):
         label = SHORT.get(next(iter(common)), next(iter(common)))
         joint = [issuers[k].short for k, v in first.items() if len(v[1]) > 1]
         title = f"{label} broke first at every issuer that broke out" + (
-            f" (tied at {', '.join(joint)})" if joint else ""
+            f", together with others at {', '.join(joint)}" if joint else ""
         )
     else:
         title = "First to break: " + "; ".join(
